@@ -152,31 +152,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Xshell连接VistualBox虚拟机Linux服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+      <a class="article-title" href="/2020/01/20/Xshell%E8%BF%9E%E6%8E%A5VistualBox%E8%99%9A%E6%8B%9F%E6%9C%BALinux%E6%9C%8D%E5%8A%A1%E5%99%A8/">Xshell连接VistualBox虚拟机Linux服务器</a>
     </h1>
   
 
         
-        <a href="/2020/01/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-01-17T16:49:45.527Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+        <a href="/2020/01/20/Xshell%E8%BF%9E%E6%8E%A5VistualBox%E8%99%9A%E6%8B%9F%E6%9C%BALinux%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2020-01-20T15:51:06.626Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<p>d<br>jihjhoi<br>##参考文献<br>iiiikmiklhll</p>
+        <hr>
+<p>title: Xshell连接VistualBox虚拟机Linux服务器<br>date: 2020-01-20 23:51:06<br>tags:<br>–</p>
+<h2 id="Xshell连接VistualBox虚拟机Linux服务器的步骤"><a href="#Xshell连接VistualBox虚拟机Linux服务器的步骤" class="headerlink" title="Xshell连接VistualBox虚拟机Linux服务器的步骤"></a>Xshell连接VistualBox虚拟机Linux服务器的步骤</h2><p>1、在VistualBox虚拟机安装好Linux服务器后，点击网络，网卡1选择仅主机（Host-Only）网络，网卡2选择网络地址转换（NAT）点击ok<br>2、进入Linux服务器，打开终端，输入ifconfig查看虚拟机的ip，如：192.168.50.101；打开Xshell，新建会话，在主机输入虚拟机的ip，点击连接，输入虚拟机的用户名和密码，即可用Xshell连接Linux服务器。</p>
+<h2 id="遇到的问题及解决方案"><a href="#遇到的问题及解决方案" class="headerlink" title="遇到的问题及解决方案"></a>遇到的问题及解决方案</h2><p>1、Xshell连接时弹出SSH拒绝密码访问，即使密码对了也不能连接虚拟机的Linux服务器，解决方案：sshd的设置不允许root用户用密码远程登录，在Linux中打开终端，修改 vim /etc/ssh/sshd_config，找到</p>
+<h1 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication:"></a>Authentication:</h1><p>LoginGraceTime 120<br>PermitRootLogin without passwd<br>StrictModes yes<br>改成</p>
+<h1 id="Authentication-1"><a href="#Authentication-1" class="headerlink" title="Authentication:"></a>Authentication:</h1><p>LoginGraceTime 120<br>PermitRootLogin yes<br>StrictModes yes<br>然后重启ssh：systemctl restart sshd<br>再重启虚拟机：reboot<br>还是修改vim /etc/sshd/sshd_config，找到<br>UsePAM yes<br>改为<br>UsePAM no<br>重启ssh：systemctl restart sshd<br>再重启虚拟机：reboot<br>2、修改vim /etc/ssh/sshd_config时出现readonly option is set(add ! to override)时，表示用户权限不够，我们可以用：sudo vim /etc/ssh/sshd_config进入修改。-</p>
 
       
 
@@ -189,69 +190,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-01-17T15:24:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/01/20/Xshell%E8%BF%9E%E6%8E%A5VistualBox%E8%99%9A%E6%8B%9F%E6%9C%BALinux%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
         </p>
       
 
